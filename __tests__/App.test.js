@@ -1,4 +1,4 @@
-import { fireEvent, render } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import { jest } from '@jest/globals';
 import App from '../src/App.js';
 

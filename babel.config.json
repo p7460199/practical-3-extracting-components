@@ -5,5 +5,5 @@
     ],
 
     // Adds .js extension to the back
-    "plugins": [["replace-import-extension", { "extMapping": { "": ".js" } }]]
+    "plugins": []
 }

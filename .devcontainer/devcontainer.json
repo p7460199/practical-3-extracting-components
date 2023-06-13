@@ -4,17 +4,23 @@
     "name": "Node.js",
     // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
     "image": "mcr.microsoft.com/devcontainers/javascript-node:0-20",
-    "features": {
-        "ghcr.io/devcontainers/features/git:1": {},
-        "ghcr.io/devcontainers/features/github-cli:1": {}
-    },
+    "features": {},
     "customizations": {
         "vscode": {
-            "extensions": ["dbaeumer.vscode-eslint", "ritwickdey.LiveServer"],
+            "extensions": [
+				"dbaeumer.vscode-eslint",
+				"ritwickdey.LiveServer",
+				"esbenp.prettier-vscode",
+				"streetsidesoftware.code-spell-checker"
+			],
             "settings": {
                 "files.associations": {
                     "*.js": "javascriptreact"
-                }
+                },
+                "javascript.preferences.importModuleSpecifierEnding": "js",
+                "prettier.printWidth": 120,
+                "prettier.singleQuote": true,
+                "prettier.tabWidth": 4
             }
         }
     },

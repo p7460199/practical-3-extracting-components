@@ -1,5 +1,5 @@
 const config = {
-    transform: {},
+    testEnvironment: 'jsdom',
 };
 
 export default config;

@@ -1,4 +1,4 @@
-import { fireEvent, render } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import Hobby from '../src/Hobby.js';
 
 it('Should render emoji and title', async () => {

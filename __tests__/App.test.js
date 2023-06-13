@@ -1,5 +1,21 @@
 import { fireEvent, render } from '@testing-library/react';
+import { jest } from '@jest/globals';
 import App from '../src/App.js';
+
+test('Should use <Hobby /> at least once', async () => {
+    const mockHobbyFunction = jest.fn();
+    jest.unstable_mockModule('../src/Hobby.js', () => ({
+        default: (props) => {
+            mockHobbyFunction(props);
+            return <p>Mock Hobby</p>;
+        },
+    }));
+    await import('../src/Hobby.js');
+    const { default: MockedApp } = await import('../src/App.js?mocked=1');
+
+    render(<MockedApp />);
+    expect(mockHobbyFunction.mock.calls.length).toBeGreaterThan(0);
+});
 
 test('Should have 2 ol', () => {
     const renderResult = render(<App />);

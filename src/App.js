@@ -4,7 +4,7 @@ import TitleLi from './TitleLi.js';
 import Age from './Age.js';
 
 export default function App(props) {
-    const name = 'Mok Wing Chew';
+    const name = 'Mok';
     return (
         <div>
             <Hello name={name}></Hello>

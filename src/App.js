@@ -1,26 +1,23 @@
 import Hello from './Hello.js';
+import Hobby from './Hobby.js';
+import TitleLi from './TitleLi.js';
+import Age from './Age.js';
 
-export default function App() {
-    const name = 'ENTER YOUR NAME';
+export default function App(props) {
+    const name = 'Mok Wing Chew';
     return (
         <div>
             <Hello name={name}></Hello>
             <div>
                 <ol>
-                    <li>
-                        <b>Name:</b> {name}
-                    </li>
-                    <li>
-                        <b>Age:</b> 18
-                    </li>
-                    <li>
-                        <b>Hobbies:</b>
-                        <ol>
-                            <li>Swim</li>
-                            <li>Run</li>
-                            <li>Game</li>
-                        </ol>
-                    </li>
+                    <TitleLi title="Name" text={name} />
+                    <Age value={19} />
+                    <TitleLi title="Hobbies" />
+                    <ol>
+                        {props.hobbies.map(function (hobby) {
+                            return <Hobby title={hobby.title} emoji={hobby.emoji} key={hobby.title} />;
+                        })}
+                    </ol>
                 </ol>
             </div>
         </div>
